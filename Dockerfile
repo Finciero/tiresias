@@ -1,10 +1,5 @@
-FROM golang:alpine
-
-ADD . /go/src/github.com/Finciero/tiresias
-
-RUN go get github.com/rodrwan/cat-grpc
-RUN go install github.com/Finciero/tiresias
-
-ENTRYPOINT /go/bin/tiresias
-
+FROM alpine
+MAINTAINER Sebastian Vera <u.verainf@gmail.com>
+COPY tiresias tiresias
 EXPOSE 3000
+ENTRYPOINT ["/tiresias"]
